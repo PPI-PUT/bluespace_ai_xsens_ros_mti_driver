@@ -37,7 +37,7 @@ def generate_launch_description():
     ld.add_action(rviz2_node)
 
     # Robot State Publisher node
-    urdf_file_path = os.path.join(get_package_share_directory('bluespace_ai_xsens_mti_driver'), 'urdf', 'MTi_6xx.urdf')
+    urdf_file_path = os.path.join(get_package_share_directory('bluespace_ai_xsens_mti_driver'), 'urdf', 'MTi_10.urdf')
     state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',

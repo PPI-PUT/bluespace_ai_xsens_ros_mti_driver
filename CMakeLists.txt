@@ -62,7 +62,7 @@ install(DIRECTORY launch param rviz urdf
 
 ##### ADD #####
 install(PROGRAMS scripts/install
-  DEFINITION lib/${PROJECT_NAME}
+  DESTINATION lib/${PROJECT_NAME}
 )
 ### END ADD ###
 

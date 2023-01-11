@@ -85,15 +85,19 @@ struct TransformPublisher : public PacketCallback
             XsQuaternion q = packet.orientationQuaternion();
 
             tf.header.stamp = timestamp;
-            tf.header.frame_id = "world";
+            tf.header.frame_id = "xsens_link";
             tf.child_frame_id = frame_id;
             tf.transform.translation.x = 0.0;
             tf.transform.translation.y = 0.0;
             tf.transform.translation.z = 0.0;
-            tf.transform.rotation.x = q.x();
-            tf.transform.rotation.y = q.y();
-            tf.transform.rotation.z = q.z();
-            tf.transform.rotation.w = q.w();
+            // tf.transform.rotation.x = q.x();
+            // tf.transform.rotation.y = q.y();
+            // tf.transform.rotation.z = q.z();
+            // tf.transform.rotation.w = q.w();
+            tf.transform.rotation.x = 0.0;
+            tf.transform.rotation.y = 0.0;
+            tf.transform.rotation.z = 0.0;
+            tf.transform.rotation.w = 1.0;
 
             tf_broadcaster.sendTransform(tf);
         }

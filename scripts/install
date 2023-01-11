@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import os
+import robot_upstart
+
+j = robot_upstart.Job(name="xsens", interface=os.environ.get('ROBOT_NETWORK'), workspace_setup=os.environ.get('ROBOT_SETUP'))
+j.add(package="bluespace_ai_xsens_mti_driver", filename="launch/xsens_mti_node.launch.py")
+j.install()

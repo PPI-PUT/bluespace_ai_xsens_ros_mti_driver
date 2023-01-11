@@ -4,7 +4,11 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from pathlib import Path
 
+import time
+
 def generate_launch_description():
+
+    time.sleep(31.0)
 
     ld = LaunchDescription()
 
@@ -19,7 +23,10 @@ def generate_launch_description():
             name='xsens_mti_node',
             output='screen',
             parameters=[parameters_file_path],
-            arguments=[]
+            arguments=[],
+	    remappings=[
+		('/imu/data','/imu/data_raw'),
+	    ]
             )
     ld.add_action(xsens_mti_node)
 
